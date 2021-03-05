@@ -29,6 +29,7 @@
         android:id="@+id/textInputEditText"
         android:layout_width="310dp"
         android:layout_height="47dp"
+        android:maxLength="8"
         android:hint="Enter Your martriculation number"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +39,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.388"
         android:inputType = "number"
+
     />
 
     <TextView
