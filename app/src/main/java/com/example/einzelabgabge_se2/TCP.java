@@ -1,4 +1,5 @@
 package com.example.einzelabgabge_se2;
+import android.telecom.Call;
 import android.widget.EditText;
 
 import java.io.BufferedReader;
@@ -11,8 +12,7 @@ import java.io.*;
 import java.net.*;
 
 
-public class TCP implements Runnable{
-
+public class TCP extends Thread{
 
     String martriculationNumber;
     String modiefiedNumber;
@@ -24,6 +24,7 @@ public class TCP implements Runnable{
 
     public TCP(String martriculationNumber){
         this.martriculationNumber = martriculationNumber;
+
     }
 //Client-Server Connection
 // Client has to create a Socket
@@ -33,8 +34,8 @@ public class TCP implements Runnable{
     @Override
     public void run() {
 
-        
         try {
+
             //create client socket to connect to server
             socket = new Socket("se2-isys.aau.at", 53212);
 
@@ -52,7 +53,7 @@ public class TCP implements Runnable{
 
             setModiefiedNumber(modiefiedNumber);
 
-            outToServer.flush();
+           //z outToServer.flush();
             inFromServer.close();
             outToServer.close();
             socket.close();
